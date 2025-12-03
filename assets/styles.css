@@ -260,6 +260,11 @@ h2 {
 .contact-form button {
   border: none;
   cursor: pointer;
+  background: #25D366;
+  color: #fff;
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: bold;
 }
 
 /* ===== FOOTER ===== */
@@ -274,4 +279,55 @@ footer img.icon-small {
   width: 22px;
   margin-left: 5px;
   vertical-align: middle;
+}
+
+/* ===== FAQ Accordion with Slide Animation ===== */
+#faq {
+  background: #f9f9f9;
+  padding: 40px;
+}
+.faq-container {
+  max-width: 800px;
+  margin: auto;
+}
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  background: #4CAF50;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-question:hover {
+  background: #45a049;
+}
+.arrow {
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 15px;
+  background: #fff;
+  color: #333;
+}
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 15px;
+}
+.faq-item.active .arrow {
+  transform: rotate(180deg); /* ubah ▼ jadi ▲ */
 }
