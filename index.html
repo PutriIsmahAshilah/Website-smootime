@@ -3,18 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmooTime - Official Website</title>
+  <title>SmooTime — Smoothies Segar Setiap Hari</title>
+
+  <!-- ===== SEO METADATA ===== -->
+  <meta name="description" content="SmooTime: smoothies mangga, stroberi, alpukat segar setiap hari. Desain minimalis, siap kirim. Chat WhatsApp untuk pesan cepat." />
+  <meta property="og:title" content="SmooTime — Smoothies Segar Setiap Hari" />
+  <meta property="og:description" content="Smoothies handmade: mangga, stroberi, alpukat. Chat WhatsApp untuk pesan cepat." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.smoothiestime.com" />
+  <meta property="og:image" content="https://www.smoothiestime.com/assets/images/logo.jpg" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Katalog Produk SmooTime",
+    "itemListElement": [
+      {"@type": "ListItem","position":1,"url":"https://www.smoothiestime.com/menu#mango"},
+      {"@type": "ListItem","position":2,"url":"https://www.smoothiestime.com/menu#strawberry"},
+      {"@type": "ListItem","position":3,"url":"https://www.smoothiestime.com/menu#avocado"}
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Apa itu SmooTime?","acceptedAnswer":{"@type":"Answer","text":"SmooTime adalah brand smoothies segar dengan bahan pilihan, dibuat setiap hari untuk menjaga kesehatan dan kesegaran Anda."}},
+      {"@type":"Question","name":"Apa saja varian smoothies yang tersedia?","acceptedAnswer":{"@type":"Answer","text":"Kami menyediakan Mango Smoothie, Strawberry Smoothie, dan Avocado Smoothie. Semua dibuat dari buah segar pilihan."}},
+      {"@type":"Question","name":"Bagaimana cara memesan smoothies SmooTime?","acceptedAnswer":{"@type":"Answer","text":"Anda bisa memesan melalui WhatsApp, GrabFood, atau Instagram kami. Link tersedia di halaman Pesan."}},
+      {"@type":"Question","name":"Apakah ada promo khusus?","acceptedAnswer":{"@type":"Answer","text":"Ya! Setiap hari Jumat ada promo Buy 5 Get 1 Free, dan pelanggan setia mendapat diskon 5% untuk semua varian."}}
+    ]
+  }
+  </script>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NYTDXFT5GN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYTDXFT5GN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NYTDXFT5GN');
+  </script>
 
-  gtag('config', 'G-NYTDXFT5GN');
-</script>
-  
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -26,16 +61,15 @@
         <img src="assets/images/logo.jpg" alt="Smoothies Time Logo">
         <span class="brand-name">SmooTime</span>
       </div>
-
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#promo">Promo</a></li>
         <li><a href="#about">Tentang Kami</a></li>
         <li><a href="#contact">Pesan</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
   </header>
@@ -53,17 +87,17 @@
   <section id="menu">
     <h2>Menu Smoothies</h2>
     <div class="menu-container">
-      <div class="menu-card">
+      <div class="menu-card" id="mango">
         <img src="assets/images/mangga.jpg" alt="Mango Smoothie">
         <h3>Mango Smoothie 🥭</h3>
         <p>Segar dari mangga tropis pilihan.</p>
       </div>
-      <div class="menu-card">
+      <div class="menu-card" id="strawberry">
         <img src="assets/images/stroberi.jpg" alt="Strawberry Smoothie">
         <h3>Strawberry Smoothie 🍓</h3>
         <p>Manis alami dan sedikit asam yang pas.</p>
       </div>
-      <div class="menu-card">
+      <div class="menu-card" id="avocado">
         <img src="assets/images/alpukat.jpg" alt="Avocado Smoothie">
         <h3>Avocado Smoothie 🥑</h3>
         <p>Lembut, creamy, dan kaya rasa sehat.</p>
@@ -102,7 +136,6 @@
   <section id="contact">
     <h2>Pesan Sekarang</h2>
     <p class="contact-subtitle">Pilih cara favorit Anda untuk menikmati Smoothies Time!</p>
-
     <div class="order-buttons">
       <a href="https://wa.me/62881025966225" class="btn green">
         <img src="assets/images/icon-whatsapp.jpg" alt="WhatsApp"> WhatsApp
@@ -114,7 +147,6 @@
         <img src="assets/images/icon-instagram.jpg" alt="Instagram"> Instagram
       </a>
     </div>
-
     <div class="form-wrapper">
       <form action="https://formsubmit.co/your-email@example.com" method="POST" class="contact-form">
         <input type="text" name="name" placeholder="Nama Anda" required>
@@ -124,6 +156,38 @@
       </form>
     </div>
   </section>
+
+ <!-- ===== FAQ ===== -->
+<section id="faq">
+  <h2>FAQ (Pertanyaan yang Sering Diajukan)</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">Apa itu SmooTime? <span class="arrow">▼</span></button>
+      <div class="faq-answer">
+        <p>SmooTime adalah brand smoothies segar dengan bahan pilihan, dibuat setiap hari untuk menjaga kesehatan dan kesegaran Anda.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Apa saja varian smoothies yang tersedia? <span class="arrow">▼</span></button>
+      <div class="faq-answer">
+        <p>Kami menyediakan Mango Smoothie, Strawberry Smoothie, dan Avocado Smoothie. Semua dibuat dari buah segar pilihan.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Bagaimana cara memesan smoothies SmooTime? <span class="arrow">▼</span></button>
+      <div class="faq-answer">
+        <p>Anda bisa memesan melalui WhatsApp, GrabFood, atau Instagram kami. Link tersedia di halaman Pesan.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Apakah ada promo khusus? <span class="arrow">▼</span></button>
+      <div class="faq-answer">
+        <p>Ya! Setiap hari Jumat ada promo Buy 5 Get 1 Free, dan pelanggan setia mendapat diskon 5% untuk semua varian.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- ===== FOOTER ===== -->
   <footer>
@@ -138,10 +202,16 @@
     </p>
   </footer>
 
+  <!-- ===== FAQ SCRIPT ===== -->
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
-
-
-
-
-
