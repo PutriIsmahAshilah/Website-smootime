@@ -56,7 +56,7 @@ body {
   object-fit: cover;
 }
 
-/* MENU RESPONSIVE */
+/* ===== NAV RESPONSIVE ===== */
 .menu-toggle {
   display: none;
 }
@@ -66,10 +66,8 @@ body {
   font-size: 28px;
   color: white;
   cursor: pointer;
-  user-select: none;
 }
 
-/* RESPONSIVE NAV */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -132,7 +130,7 @@ body {
   background-color: #fff0e6;
 }
 
-/* ===== SECTION STYLE ===== */
+/* ===== SECTION ===== */
 section {
   padding: 60px 8%;
   text-align: center;
@@ -152,7 +150,7 @@ h2 {
 }
 
 .menu-card {
-  background: white;
+  background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 15px;
@@ -212,35 +210,50 @@ h2 {
   margin-bottom: 25px;
 }
 
+/* ===== ORDER BUTTONS (SERAGAM) ===== */
 .order-buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
   flex-wrap: wrap;
-  gap: 15px;
   margin-bottom: 30px;
 }
 
-.btn {
+.order-buttons .btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 25px;
-  border-radius: 30px;
+  justify-content: center;
+  min-width: 180px;
+  height: 52px;
+  padding: 0 26px;
+  border-radius: 999px;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  gap: 10px;
+  transition: all 0.25s ease;
 }
 
-.btn img {
+.order-buttons .btn img {
   width: 22px;
   height: 22px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
-.green { background: #25D366; }
-.red { background: #ea4335; }
-.pink { background: #E1306C; }
+/* ===== PLATFORM COLORS ===== */
+.green { background-color: #25D366; }
+.red { background-color: #ea4335; }
+.pink { background-color: #E1306C; }
+.gofood { background-color: #ee2737; }
 
+.order-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* ===== CONTACT FORM ===== */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -249,8 +262,8 @@ h2 {
   margin: 0 auto;
 }
 
-.contact-form input, .contact-form textarea {
-  width: 100%;
+.contact-form input,
+.contact-form textarea {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -281,21 +294,24 @@ footer img.icon-small {
   vertical-align: middle;
 }
 
-/* ===== FAQ Accordion with Slide Animation ===== */
+/* ===== FAQ ===== */
 #faq {
   background: #f9f9f9;
   padding: 40px;
 }
+
 .faq-container {
   max-width: 800px;
   margin: auto;
 }
+
 .faq-item {
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
 }
+
 .faq-question {
   width: 100%;
   text-align: left;
@@ -309,25 +325,29 @@ footer img.icon-small {
   justify-content: space-between;
   align-items: center;
 }
+
 .faq-question:hover {
   background: #45a049;
 }
+
 .arrow {
   font-weight: bold;
   transition: transform 0.3s;
 }
+
 .faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
   padding: 0 15px;
   background: #fff;
-  color: #333;
 }
+
 .faq-item.active .faq-answer {
   max-height: 200px;
   padding: 15px;
 }
+
 .faq-item.active .arrow {
-  transform: rotate(180deg); /* ubah ▼ jadi ▲ */
+  transform: rotate(180deg);
 }
