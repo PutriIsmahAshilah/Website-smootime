@@ -401,3 +401,52 @@ footer img.icon-small {
     display: block;
   }
 }
+
+/* ===== MOBILE NAV FIX (HP ONLY) ===== */
+@media (max-width: 768px) {
+
+  /* navbar tetap */
+  .navbar-inner {
+    position: relative;
+  }
+
+  /* hamburger ke pojok kanan */
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* menu HP */
+  .nav-links {
+    list-style: none;          /* HILANGKAN BULLET */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #ff8f66;
+    display: none;
+    flex-direction: column;
+  }
+
+  /* muncul pas klik */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-top: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
