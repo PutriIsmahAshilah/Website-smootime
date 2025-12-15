@@ -242,21 +242,22 @@
     });
   </script>
 
- <!-- ===== HAMBURGER MENU SCRIPT (INI YANG KURANG) ===== -->
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
+<!-- ===== HAMBURGER MENU SCRIPT ===== -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
 
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
-  </script>
+// Tutup menu saat link diklik (untuk UX yang lebih baik)
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
+</script>
 
 </body>
 </html>
