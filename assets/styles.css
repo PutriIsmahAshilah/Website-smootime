@@ -80,9 +80,8 @@ body {
     z-index: 1001;
   }
 
-   /* INI KUNCI UTAMA */
   .nav-links {
-    display: none;             
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 70px;
@@ -94,29 +93,8 @@ body {
     z-index: 1000;
   }
 
-  /* MENU MUNCUL */
   .nav-links.active {
-    display: flex;              
-
-  .nav-links li {
-    padding: 12px 0;
-  }
-
-
-    /* INI YANG BIKIN HILANG */
-    transform: translateY(-20px);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition: all 0.3s ease;
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    display: flex;
   }
 
   .nav-links li {
@@ -127,6 +105,7 @@ body {
     font-size: 18px;
   }
 }
+
 
 
 /* ===== HERO ===== */
