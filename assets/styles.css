@@ -72,24 +72,36 @@ body {
 
 /* ===== MOBILE NAVBAR (☰ + SLIDE) ===== */
 @media (max-width: 768px) {
+
   .hamburger {
     display: block;
     font-size: 30px;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 8px;
-    user-select: none;
+    z-index: 1001;
   }
 
+   /* INI KUNCI UTAMA */
   .nav-links {
+    display: none;             
+    flex-direction: column;
     position: absolute;
     top: 70px;
     left: 0;
     width: 100%;
     background-color: #ff8f66;
-    flex-direction: column;
     text-align: center;
     padding: 15px 0;
+    z-index: 1000;
+  }
+
+  /* MENU MUNCUL */
+  .nav-links.active {
+    display: flex;              
+
+  .nav-links li {
+    padding: 12px 0;
+  }
+
 
     /* INI YANG BIKIN HILANG */
     transform: translateY(-20px);
