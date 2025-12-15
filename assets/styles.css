@@ -12,6 +12,20 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== NAVBAR ===== */
+.navbar {
+  background: linear-gradient(90deg, #ff7b54, #ff9b73);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  position: relative;
+}
+
 /* LOGO */
 .logo {
   display: flex;
@@ -29,20 +43,6 @@ body {
 .brand-name {
   font-weight: 700;
   font-size: 18px;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-  background: linear-gradient(90deg, #ff7b54, #ff9b73);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  position: relative;
 }
 
 /* NAV LINKS DESKTOP */
@@ -71,19 +71,15 @@ body {
 
   .hamburger {
     display: block;
-    font-size: 30px;
-    cursor: pointer;
   }
 
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%;     /* TURUN KE BAWAH */
+    top: 100%;
     left: 0;
-
     width: 100%;
-    background: #ff8f66;
-
+    background-color: #ff8f66;
     flex-direction: column;
     text-align: center;
   }
@@ -97,10 +93,7 @@ body {
   }
 
   .nav-links li a {
-    color: white;
     font-size: 18px;
-    text-decoration: none;
-    display: block;
   }
 }
 
