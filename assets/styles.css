@@ -75,39 +75,41 @@ body {
 /* ===== MOBILE NAVBAR (☰ + SLIDE) ===== */
 @media (max-width: 768px) {
 
+  /* ☰ ICON */
   .hamburger {
     display: block;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 1001;
+    position: relative;
+    z-index: 2000;
   }
 
+  /* SEMBUNYIKAN MENU DESKTOP */
   .nav-links {
     display: none;
-    flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: #ff8f66;
+    flex-direction: column;
     text-align: center;
-    padding: 15px 0;
-    z-index: 1000;
+    z-index: 1500;
   }
 
+  /* MENU MUNCUL SAAT KLIK */
   .nav-links.active {
     display: flex;
   }
 
   .nav-links li {
-    padding: 12px 0;
+    padding: 14px 0;
   }
 
   .nav-links li a {
     font-size: 18px;
+    display: block;
+    width: 100%;
   }
 }
-
 
 
 /* ===== HERO ===== */
