@@ -20,29 +20,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  flex-wrap: wrap;
   position: sticky;
   top: 0;
   z-index: 999;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  color: #fff0e6;
-}
-
+/* LOGO */
 .logo {
   display: flex;
   align-items: center;
@@ -56,41 +39,73 @@ body {
   object-fit: cover;
 }
 
-/* ===== NAV RESPONSIVE ===== */
-.menu-toggle {
-  display: none;
+.brand-name {
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.menu-icon {
+/* NAV LINKS DESKTOP */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #fff0e6;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
   display: none;
   font-size: 28px;
-  color: white;
   cursor: pointer;
+  color: white;
 }
 
+/* ===== MOBILE NAVBAR (☰ + SLIDE) ===== */
 @media (max-width: 768px) {
-  .menu-icon {
+  .hamburger {
     display: block;
   }
 
-  .navbar ul {
-    display: none;
+  .nav-links {
     flex-direction: column;
     position: absolute;
     top: 70px;
     left: 0;
     width: 100%;
-    background: linear-gradient(90deg, #ff9b73, #ff7b54);
+    background-color: #ff8f66;
+    padding: 20px 0;
+    z-index: 999;
+
+    /* SLIDE EFFECT */
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
     text-align: center;
-    padding: 15px 0;
+    padding: 12px 0;
   }
 
-  .navbar ul li {
-    margin: 12px 0;
-  }
-
-  .menu-toggle:checked + .menu-icon + ul {
-    display: flex;
+  .nav-links li a {
+    font-size: 18px;
   }
 }
 
@@ -204,13 +219,64 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* ===== CONTACT ===== */
-.contact-subtitle {
-  color: #777;
-  margin-bottom: 25px;
+/* ===== CONTACT FORM FIX ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* ===== ORDER BUTTONS (SERAGAM) ===== */
+/* Baris input */
+.contact-form .form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #25D366;
+}
+
+/* Textarea */
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
+.contact-form button {
+  align-self: flex-start;
+  background: #25D366;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.contact-form button:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+
+/* ===== ORDER BUTTONS ===== */
 .order-buttons {
   display: flex;
   justify-content: center;
@@ -239,59 +305,16 @@ h2 {
 .order-buttons .btn img {
   width: 22px;
   height: 22px;
-  object-fit: contain;
 }
 
-/* ===== PLATFORM COLORS ===== */
+/* PLATFORM COLORS */
 .green { background-color: #25D366; }
 .red { background-color: #ea4335; }
 .pink { background-color: #E1306C; }
-.gofood { background-color: #ee2737; }
 
 .order-buttons .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-/* ===== CONTACT FORM ===== */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  resize: none;
-}
-
-.contact-form button {
-  border: none;
-  cursor: pointer;
-  background: #25D366;
-  color: #fff;
-  padding: 12px;
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: linear-gradient(90deg, #ff7b54, #ff9b73);
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-footer img.icon-small {
-  width: 22px;
-  margin-left: 5px;
-  vertical-align: middle;
 }
 
 /* ===== FAQ ===== */
@@ -321,18 +344,6 @@ footer img.icon-small {
   font-size: 16px;
   border: none;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.faq-question:hover {
-  background: #45a049;
-}
-
-.arrow {
-  font-weight: bold;
-  transition: transform 0.3s;
 }
 
 .faq-answer {
@@ -348,13 +359,9 @@ footer img.icon-small {
   padding: 15px;
 }
 
-.faq-item.active .arrow {
-  transform: rotate(180deg);
-}
-
+/* ===== LOKASI ===== */
 #lokasi {
   padding: 60px 20px;
-  text-align: center;
   background-color: #fafafa;
 }
 
@@ -372,4 +379,18 @@ footer img.icon-small {
   font-size: 14px;
   margin-top: 12px;
   color: #555;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: linear-gradient(90deg, #ff7b54, #ff9b73);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer img.icon-small {
+  width: 22px;
+  margin-left: 5px;
+  vertical-align: middle;
 }
