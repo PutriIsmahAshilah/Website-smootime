@@ -351,3 +351,25 @@ footer img.icon-small {
 .faq-item.active .arrow {
   transform: rotate(180deg);
 }
+
+#lokasi {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.location-text a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.location-text a:hover {
+  text-decoration: underline;
+}
+
+.location-note {
+  font-size: 14px;
+  margin-top: 12px;
+  color: #555;
+}
