@@ -45,17 +45,16 @@
 
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
-
 <body>
 
 <nav class="navbar">
-  <div class="logo">
-    <img src="assets/images/logo.jpg" alt="Logo Smoothies SmooTime">
-    <span class="brand-name">SmooTime</span>
+  <div class="navbar-top">
+    <div class="logo">
+      <img src="assets/images/logo.jpg">
+      <span class="brand-name">SmooTime</span>
+    </div>
+    <div id="hamburger" class="hamburger">☰</div>
   </div>
-
-  <div id="hamburger" style="font-size:40px;cursor:pointer;">☰</div>
-<ul id="navLinks" style="display:none;">
 
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
@@ -68,12 +67,8 @@
   </ul>
 </nav>
 
-<script>
-document.getElementById("hamburger").onclick = function () {
-  const nav = document.getElementById("navLinks");
-  nav.style.display = nav.style.display === "block" ? "none" : "block";
-};
-</script>
+
+
 
   <!-- ===== HERO ===== -->
   <section id="home" class="hero">
