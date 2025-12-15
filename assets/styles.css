@@ -12,21 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== NAVBAR ===== */
-.navbar {
-  background: linear-gradient(90deg, #ff7b54, #ff9b73);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-
-  position: relative; /* ← INI WAJIB */
-}
-
 /* LOGO */
 .logo {
   display: flex;
@@ -42,8 +27,22 @@ body {
 }
 
 .brand-name {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: linear-gradient(90deg, #ff7b54, #ff9b73);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  position: relative;
 }
 
 /* NAV LINKS DESKTOP */
@@ -56,46 +55,39 @@ body {
 .nav-links li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #fff0e6;
+  font-weight: 600;
 }
 
 /* ===== HAMBURGER ===== */
 .hamburger {
   display: none;
-  font-size: 28px;
+  font-size: 30px;
   cursor: pointer;
   color: white;
 }
 
-/* ===== MOBILE NAVBAR (☰ + SLIDE) ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
 
-  /* ☰ ICON */
   .hamburger {
     display: block;
-    position: relative;
-    z-index: 2000;
+    font-size: 30px;
+    cursor: pointer;
   }
 
-  /* SEMBUNYIKAN MENU DESKTOP */
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100%;     /* TURUN KE BAWAH */
     left: 0;
+
     width: 100%;
-    background-color: #ff8f66;
+    background: #ff8f66;
+
     flex-direction: column;
     text-align: center;
-    z-index: 1500;
   }
 
-  /* MENU MUNCUL SAAT KLIK */
   .nav-links.active {
     display: flex;
   }
@@ -105,12 +97,12 @@ body {
   }
 
   .nav-links li a {
+    color: white;
     font-size: 18px;
+    text-decoration: none;
     display: block;
-    width: 100%;
   }
 }
-
 
 /* ===== HERO ===== */
 .hero {
