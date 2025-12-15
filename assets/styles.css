@@ -12,91 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== NAVBAR ===== */
-.navbar {
-  background: linear-gradient(90deg, #ff7b54, #ff9b73);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  position: relative;
-}
-
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.brand-name {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-/* NAV LINKS DESKTOP */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* ===== HAMBURGER ===== */
-.hamburger {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: white;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #ff8f66;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    padding: 14px 0;
-  }
-
-  .nav-links li a {
-    font-size: 18px;
-  }
-}
-
 /* ===== HERO ===== */
 .hero {
   background: linear-gradient(135deg, #ff9b73, #ff7b54);
@@ -381,4 +296,91 @@ footer img.icon-small {
   width: 22px;
   margin-left: 5px;
   vertical-align: middle;
+}
+
+/* ===== NAVBAR SIMPLE RESPONSIVE ===== */
+.navbar {
+  background: linear-gradient(90deg, #ff7b54, #ff9b73);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* PENTING */
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.brand-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* MENU */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ===== MOBILE AUTO TURUN ===== */
+@media (max-width: 768px) {
+
+  .navbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    margin-top: 12px;
+
+    flex-direction: column;
+    gap: 0;
+
+    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 14px 16px;
+    font-size: 16px;
+  }
 }
