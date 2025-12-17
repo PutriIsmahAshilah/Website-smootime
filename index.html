@@ -68,6 +68,10 @@
   </div>
 </nav>
 
+<div class="theme-switch">
+  <button id="lightMode" class="theme-btn active">☀️</button>
+  <button id="darkMode" class="theme-btn">🌙</button>
+</div>
 
   <!-- ===== HERO ===== -->
   <section id="home" class="hero">
@@ -261,5 +265,40 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 </script>
 
+  <script>
+const lightBtn = document.getElementById("lightMode");
+const darkBtn = document.getElementById("darkMode");
+const body = document.body;
+
+// Load theme dari localStorage
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  body.classList.add("dark");
+  darkBtn.classList.add("active");
+  lightBtn.classList.remove("active");
+} else {
+  body.classList.remove("dark");
+  lightBtn.classList.add("active");
+  darkBtn.classList.remove("active");
+}
+
+// Event click
+lightBtn.addEventListener("click", () => {
+  body.classList.remove("dark");
+  localStorage.setItem("theme", "light");
+  lightBtn.classList.add("active");
+  darkBtn.classList.remove("active");
+});
+
+darkBtn.addEventListener("click", () => {
+  body.classList.add("dark");
+  localStorage.setItem("theme", "dark");
+  darkBtn.classList.add("active");
+  lightBtn.classList.remove("active");
+});
+</script>
+
 </body>
 </html>
+
